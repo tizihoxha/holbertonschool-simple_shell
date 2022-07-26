@@ -19,6 +19,6 @@ char *_strcpy(char *dest, char *src);
 char *_strdup(char *str);
 int _str_n_cmp(const char *s1, const char *s2, size_t n);
 void _printenv(char **environ);
-char *_getenv(const char *name);
+int _getenv(int argc, char *argv[], char *envp[]);
 
 #endif
