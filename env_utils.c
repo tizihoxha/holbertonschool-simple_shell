@@ -1,9 +1,11 @@
 #include "shell.h"
 
 /**
-*
-*
-*
+* str_n_cmp - Function that compares n elements of a string
+* @s1: first string
+* @s2: second string
+* @n: long int to measure the number of elements in a string
+* Return: return 1 if s1 > s2, -1 if s1 < s2, or 0
 */
 
 int _str_n_cmp(const char *s1, const char *s2, size_t n)
