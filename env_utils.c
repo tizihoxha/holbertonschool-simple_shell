@@ -53,7 +53,7 @@ void _printenv(char **environ)
 *
 */
 
-char *_getenv(int argc, char *argv[], char *envp[])
+int _getenv(int argc, char *argv[], char *envp[])
 {
     int i;
     
