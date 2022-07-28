@@ -1,22 +1,50 @@
 #include "shell.h"
+
 /**
  *
  *
  *
  */
-
-char *_getline(void)
+char *command_path(char *cmd)
 {
-	int temp;
-	char *line = NULL;
-	size_t size = 0;
+	int length = 0;
+	char *path = _strdup(_getenv("PATH"));
+	char *tokenize = strtok(path, ":");
+	char *path_array[100];
+	char *new_path = NULL;
+	struct stat buffer;
 
-	temp = getline(&line, &size, stdin);
-	if (temp == EOF)
+	new_path = malloc(sixeof(char) * 100);
+	if (_getenv("PATH")[0] == ":")
+		if (stat(cmd, &buffer) == 0)
+			return (_strdup(cmd));
+	for (; tokenize; length++)
 	{
-		if (isatty(STDIN_FILENO))
-			write(1, "\n", 1);
-		exit(0);
+		path_array[length] = tokenize;
+		tokenize = strtok(NULL, ":");
 	}
-	return (line);
+	path_array[length] = NULL;
+	while (path_array[length])
+	{
+		_strcpy(new_path, path_array[length]);
+		_strcat(new_path, "/");
+		_strcat(new_path, cmd);
+		_strcat(new_path, "\0");
+		length++;
+		if (stat(new_path, &buffer) == 0)
+		{
+			free(path);
+			return (new_path);
+		}
+		else
+			new_path[0] = 0;
+	}
+	free(path);
+	free(new_path);
+	if (stat(cmd, &buffer) == 0)
+		return (_strdup(cmd));
+	return (NULL);
 }
+	
+
+
