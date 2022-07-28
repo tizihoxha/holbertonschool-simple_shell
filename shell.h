@@ -20,5 +20,6 @@ char *_strdup(char *str);
 int _str_n_cmp(const char *s1, const char *s2, size_t n);
 void _printenv(char **environ);
 int _getenv(int argc, char *argv[], char *envp[]);
+char *command_path(char *cmd);
 
 #endif
