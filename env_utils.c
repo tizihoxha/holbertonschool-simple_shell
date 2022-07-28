@@ -34,9 +34,9 @@ int _str_n_cmp(const char *s1, const char *s2, size_t n)
 }
 
 /**
-* printenv
-*
-*
+* printenv - function that prints environmental variables
+* @environ - ponter to function
+* Return: No return
 */
 
 void _printenv(char **environ)
@@ -48,9 +48,11 @@ void _printenv(char **environ)
 }
 
 /**
-*
-*
-*
+* getenv - function that gets environmental variables
+* @argc: argument count
+* @argv: pointer to argv array
+* @envp: pointer to envp array
+* Return:  0
 */
 
 int _getenv(int argc, char *argv[], char *envp[])
