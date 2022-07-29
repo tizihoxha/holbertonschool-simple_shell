@@ -7,7 +7,7 @@
 * @n: long int to measure the number of elements in a string
 * Return: return 1 if s1 > s2, -1 if s1 < s2, or 0
 */
-
+/*
 int _str_n_cmp(const char *s1, const char *s2, size_t n)
 {
 	char c1;
@@ -32,35 +32,54 @@ int _str_n_cmp(const char *s1, const char *s2, size_t n)
 		n--;
 	}
 }
-
-/**
-* printenv - function that prints environmental variables
-* @environ - ponter to function
-* Return: No return
 */
-
-void _printenv(char **environ)
-{
-	int i;
-	
-	for (i = 0; environ[i] ; i++)
-		_putchar(environ[i]);
-}
-
 /**
 * getenv - function that gets environmental variables
+* @name - ponter to function
+* Return: No return
+*/
+/**
+char* _getenv(const char *name)
+{
+	int i, j;
+	char *str;
+
+	if (name == NULL)
+		return (NULL);
+	
+	for (i = 0; environ[i] ; i++)
+	{
+		if (name[j] == environ[i][j])
+		{
+			for (j = 0; name[j]; j++)
+			{
+				if (name[j] != environ[i][j])
+					break;
+			}
+			if (name[j] == '\0')
+			{
+				str = (environ[i] + j + 1);
+				return (str);
+			}
+		}
+	}
+	return (0);
+}
+*/
+/**
+* printenv - function that prints environmental variables
 * @argc: argument count
 * @argv: pointer to argv array
-* @envp: pointer to envp array
+* @environ: pointer to env variable
 * Return:  0
 */
 
-int _getenv(int argc, char *argv[], char *envp[])
+int main(int argc, char *argv[], char *environ[])
+
 {
     int i;
     
-    for (i = 0; envp[i] != NULL; i++)
-	    printf("\n%s", envp[i]);
-    getchar();
+    for (i = 0; environ[i] != NULL; i++)
+	    _puts(environ[i]);
     return (0);
 }

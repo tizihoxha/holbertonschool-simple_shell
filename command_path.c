@@ -14,7 +14,7 @@ char *command_path(char *cmd)
 	char *new_path = NULL;
 	struct stat buffer;
 
-	new_path = malloc(sixeof(char) * 100);
+	new_path = malloc(sizeof(char) * 100);
 	if (_getenv("PATH")[0] == ":")
 		if (stat(cmd, &buffer) == 0)
 			return (_strdup(cmd));
