@@ -24,4 +24,7 @@ char* _getenv(char *name);
 void _puts(char* string);
 int _putchar(char c);
 int command_read(char *str, size_t __attribute__((unused))characters);
+int main(int __attribute__ ((unused))argc, char *argv[]);
+int execute(char *cmd_arr[]);
+
 #endif
