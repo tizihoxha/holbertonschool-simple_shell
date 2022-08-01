@@ -7,13 +7,13 @@
 * @n: long int to measure the number of elements in a string
 * Return: return 1 if s1 > s2, -1 if s1 < s2, or 0
 */
-/*
+
 int _str_n_cmp(const char *s1, const char *s2, size_t n)
 {
 	char c1;
 	char c2;
 	
-	while (n)
+	while (n--)
 	{
 		c1 = *s1++;
 		c2 = *s2++;
@@ -29,16 +29,15 @@ int _str_n_cmp(const char *s1, const char *s2, size_t n)
 					return (0);
 			}
 		}
-		n--;
 	}
 }
-*/
+
 /**
 * getenv - function that gets environmental variables
 * @name - ponter to function
 * Return: No return
 */
-/**
+
 char* _getenv(const char *name)
 {
 	int i, j;
@@ -65,7 +64,7 @@ char* _getenv(const char *name)
 	}
 	return (0);
 }
-*/
+
 /**
 * printenv - function that prints environmental variables
 * @argc: argument count
@@ -74,7 +73,7 @@ char* _getenv(const char *name)
 * Return:  0
 */
 
-int main(int argc, char *argv[], char *environ[])
+int printenv(int argc, char *argv[], char *environ[])
 
 {
     int i;
