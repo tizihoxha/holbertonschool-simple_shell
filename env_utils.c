@@ -80,7 +80,8 @@ int _printenv(void)
 	{
 		write(file_descr, str, _strlen(str));
 		write(file_descr, "\n", 1);
-		str = environ[++i];
+		str = environ[i];
+		i++;
 	}
 	return (0);
 }
