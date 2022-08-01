@@ -15,7 +15,7 @@ int main(int __attribute__ ((unused))argc, char *argv[])
 	char *line = NULL;
 	size_t buffer = 0;
 	ssize_t chars = 0;
-
+	
 	name = argv[0];
 	while(1)
 	{
@@ -31,7 +31,6 @@ int main(int __attribute__ ((unused))argc, char *argv[])
 		if (line[chars - 1] == '\n')
 			line[chars - 1] = '\0';
 		if (*line)
-
 			continue;
 		if (command_read(line, chars) == 2)
 			break;
