@@ -42,12 +42,12 @@ int _str_n_cmp(const char *s1, const char *s2, size_t n)
 char *_getenv(char *name)
 {
 	int i = 0;
-	int len_name = _strlen(name);
+	int len = _strlen(name);
 
 	while ( environ[i] != NULL)
 	{
 		if (_str_n_cmp(environ[i], name, _strlen(name)) == 0)
-			return (&environ[i][len_name]);
+			return (&environ[i][len]);
 		i++;
 	}
      
