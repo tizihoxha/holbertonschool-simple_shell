@@ -1,11 +1,13 @@
 #include "shell.h"
 
 /**
- * 
- *
- *
+ * execute - function that executes commands 
+ * @cmd_arr: array containing elements of command line
+ * Return: 0 in success 3 in failure
  */
+
 char *name;
+
 /**
  * @name: global variable
  */
