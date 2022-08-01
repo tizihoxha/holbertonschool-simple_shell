@@ -23,4 +23,5 @@ char *command_path(char *cmd);
 char* _getenv(char *name);
 void _puts(char* string);
 int _putchar(char c);
+int command_read(char *str, size_t __attribute__((unused))characters);
 #endif
