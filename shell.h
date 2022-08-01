@@ -21,8 +21,7 @@ int _str_n_cmp(const char *s1, const char *s2, size_t n);
 /**void _printenv(char **environ);*/
 /**int _getenv(int argc, char *argv[], char *envp[]);*/
 char *command_path(char *cmd);
-int main(int argc, char *argv[], char *environ[]);
-char* _getenv(const char *name);
+char* _getenv(char *name);
 void _puts(char* string);
 int _putchar(char c);
 #endif
