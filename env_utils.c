@@ -68,18 +68,19 @@ char* _getenv(const char *name)
 
 /**
 * printenv - function that prints environmental variables
-* @argc: argument count
-* @argv: pointer to argv array
-* @environ: pointer to env variable
 * Return:  0
 */
 
-int printenv(int argc, char *argv[], char *environ[])
-
+int _printenv(void)
 {
-    int i;
-    
-    for (i = 0; environ[i] != NULL; i++)
-	    _puts(environ[i]);
-    return (0);
+	char *str = environ[0];
+	int i = 0, file_descr = 1;
+	
+	while (str[i] != '\0')
+	{
+		write(file_descr, str, _strlen(str));
+		write(file_descr, "\n", 1);
+		str = environ[++i];
+	}
+	return (0);
 }
