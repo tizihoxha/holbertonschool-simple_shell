@@ -50,7 +50,6 @@ char *_getenv(char *name)
 			return (&environ[i][len]);
 		i++;
 	}
-     
 	return (NULL);
 }
 
