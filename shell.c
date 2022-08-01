@@ -21,7 +21,7 @@ int main(int __attribute__ ((unused))argc, char *argv[])
 	{
 		if (isatty(0) == 1) /* 0 = STDIN_FILENO */
 			write(1, "$ ", 2);
-		chars = getline(&line, &buffer, 0); /* 0 = STDIN_FILENO */
+		chars = getline(&line, &buffer, 0);
 		if (char == -1)
 		{
 			if (isatty(0) == 1)
