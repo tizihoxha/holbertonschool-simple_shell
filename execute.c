@@ -8,9 +8,6 @@
 
 char *name;
 
-/**
- * @name: global variable
- */
 int execute(char *cmd_arr[])
 {
 	char *execute_path = NULL;
