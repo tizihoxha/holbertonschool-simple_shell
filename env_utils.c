@@ -39,31 +39,19 @@ int _str_n_cmp(const char *s1, const char *s2, size_t n)
 * Return: No return
 */
 
-char* _getenv(const char *name)
+char *_getenv(char *name)
 {
-	int i, j;
-	char *str;
+	int i = 0;
+	int len_name = _strlen(name);
 
-	if (name == NULL)
-		return (NULL);
-	
-	for (i = 0; environ[i] ; i++)
+	while ( environ[i] != NULL)
 	{
-		if (name[j] == environ[i][j])
-		{
-			for (j = 0; name[j]; j++)
-			{
-				if (name[j] != environ[i][j])
-					break;
-			}
-			if (name[j] == '\0')
-			{
-				str = (environ[i] + j + 1);
-				return (str);
-			}
-		}
+		if (_str_n_cmp(environ[i], name, _strlen(name)) == 0)
+			return (&environ[i][len_name]);
+		i++;
 	}
-	return (0);
+     
+	return (NULL);
 }
 
 /**
