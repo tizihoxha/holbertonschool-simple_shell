@@ -1,9 +1,9 @@
 #include "shell.h"
 
 /**
- *
- *
- *
+ * command_path - function that finds command path
+ * @cmd: pointer to string of commands
+ * Return: a copy of command path or NULL for error
  */
 char *command_path(char *cmd)
 {
