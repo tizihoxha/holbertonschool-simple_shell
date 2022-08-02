@@ -25,7 +25,7 @@ int main(int __attribute__ ((unused))argc, char *argv[])
 		if (chars == -1)
 		{
 			if (isatty(0) == 1)
-				write(1 , "\n", 1);
+				write(1, "\n", 1);
 			break;
 		}
 		if (line[chars - 1] == '\n')
