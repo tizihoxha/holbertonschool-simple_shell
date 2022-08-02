@@ -39,6 +39,11 @@ int main(int __attribute__ ((unused))argc, char *argv[])
 	line = NULL;
 	return (0);
 }
+/**
+ *
+ *
+ *
+ */
 
 int execute(char *cmd_arr[])
 {
@@ -51,9 +56,9 @@ int execute(char *cmd_arr[])
 	execute_path = command_path(cmd);
 	if (execute_path == NULL)
 	{
-	        write(2, name, strlen(name));
+	        write(2, name, _strlen(name));
 		write (2, ": ", 2);
-	        write(2, cmd, strlen(cmd));
+	        write(2, cmd, _strlen(cmd));
 		write(2, ": not found\n", 12);
 
 		return (3);
@@ -95,9 +100,9 @@ int command_read(char *str, size_t __attribute__((unused))characters)
 	char *cmd_arr[100];
 	int i;
 
-	if (strcmp(str, "exit") == 0)
+	if (_strcmp(str, "exit") == 0)
 		return (2);
-	if (strcmp(str, "env") == 0)
+	if (_strcmp(str, "env") == 0)
 		return (_printenv());
 	token = strtok(str, " "), i = 0;
 	while (token)
