@@ -42,11 +42,11 @@ int _str_n_cmp(const char *s1, const char *s2, size_t n)
 char *_getenv(char *name)
 {
 	int i = 0;
-	int len = _strlen(name);
+	int len = strlen(name);
 
 	while ( environ[i] != NULL)
 	{
-		if (_str_n_cmp(environ[i], name, _strlen(name)) == 0)
+		if (strncmp(environ[i], name, strlen(name)) == 0)
 			return (&environ[i][len]);
 		i++;
 	}
@@ -65,10 +65,10 @@ int _printenv(void)
 	
 	while (str[i] != '\0')
 	{
-		write(file_descr, str, _strlen(str));
+		write(file_descr, str, strlen(str));
 		write(file_descr, "\n", 1);
 		str = environ[i];
-		i++;
+		++i;
 	}
 	return (0);
 }
