@@ -83,8 +83,6 @@ int execute(char *cmd_arr[])
 	return (0);
 }
 
-#include "shell.h"
-
 /**
  * command_read - function that reads commands
  * @str: pointer to string
