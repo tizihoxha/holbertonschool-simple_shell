@@ -61,12 +61,12 @@ char *_getenv(char *name)
 int _printenv(void)
 {
 	char *str = environ[0];
-	int i = 0, file_descr = 1;
+	int i = 0;
 	
 	while (str[i] != '\0')
 	{
-		write(file_descr, str, strlen(str));
-		write(file_descr, "\n", 1);
+		write(1, str, strlen(str));
+		write(1, "\n", 1);
 		str = environ[i];
 		++i;
 	}
