@@ -61,7 +61,7 @@ char *_getenv(char *name)
 int _printenv(void)
 {
 	char *str = environ[0];
-	int i = 0;
+	int i = 1;
 	
 	while (str[i] != '\0')
 	{
