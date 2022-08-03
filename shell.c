@@ -8,19 +8,14 @@
  * Return: 0
  */
 
-char *name;
-/**
- * @name: global variable
- */
-
 int main(int __attribute__ ((unused))argc, char *argv[])
 {
 	char *line = NULL;
 	size_t buffer = 0;
 	ssize_t chars = 0;
-	
+
 	name = argv[0];
-	while(1)
+	while (1)
 	{
 		if (isatty(0) == 1)
 			write(1, "$ ", 2);
@@ -42,12 +37,12 @@ int main(int __attribute__ ((unused))argc, char *argv[])
 	line = NULL;
 	return (0);
 }
+
 /**
  * execute - function that executes commands
  * @cmd_arr: pointer to array of commands
  * Return: 0, -1, 3
  */
-
 int execute(char *cmd_arr[])
 {
 	char *execute_path = NULL;
@@ -59,9 +54,9 @@ int execute(char *cmd_arr[])
 	execute_path = command_path(cmd);
 	if (execute_path == NULL)
 	{
-	        write(2, name, _strlen(name));
-		write (2, ": ", 2);
-	        write(2, cmd, _strlen(cmd));
+		write(2, name, _strlen(name));
+		write(2, ": ", 2);
+		write(2, cmd, _strlen(cmd));
 		write(2, ": not found\n", 12);
 
 		return (3);
@@ -76,16 +71,16 @@ int execute(char *cmd_arr[])
 		wait(&status);
 	else if (pid == 0)
 	{
-	  if (environ)
-	    {
-		(execve(execute_path, cmd_arr, environ));
-		perror("Error:");
-		exit(2);
-	    }
-	  else
-	    {
-	      execve(execute_path, cmd_arr, NULL);
-	    }
+		if (environ)
+		{
+			(execve(execute_path, cmd_arr, environ));
+			perror("Error:");
+			exit(2);
+		}
+		else
+		{
+			execve(execute_path, cmd_arr, NULL);
+		}
 	}
 	free(execute_path);
 	return (0);
@@ -94,6 +89,7 @@ int execute(char *cmd_arr[])
 /**
  * command_read - function that reads commands
  * @str: pointer to string
+ * @characters: character os a string
  * Return: status code
  */
 

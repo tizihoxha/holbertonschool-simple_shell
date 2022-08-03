@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
-* str_n_cmp - Function that compares n elements of a string
+* _str_n_cmp - Function that compares n elements of a string
 * @s1: first string
 * @s2: second string
 * @n: long int to measure the number of elements in a string
@@ -12,7 +12,7 @@ int _str_n_cmp(const char *s1, const char *s2, size_t n)
 {
 	char c1;
 	char c2;
-	
+
 	while (n--)
 	{
 		c1 = *s1++;
@@ -21,21 +21,18 @@ int _str_n_cmp(const char *s1, const char *s2, size_t n)
 		{
 			if (c1 > c2)
 				return (1);
-			else
-			{
-				if (c1 < c2)
+				else if (c1 < c2)
 					return (-1);
 				else
 					return (0);
-			}
 		}
 	}
 	return (0);
 }
 
 /**
-* getenv - function that gets environmental variables
-* @name - ponter to function
+* _getenv - function that gets environmental variables
+* @name: ponter to function
 * Return: No return
 */
 
@@ -44,9 +41,9 @@ char *_getenv(char *name)
 	int i = 0;
 	int len = strlen(name);
 
-	while ( environ[i] != NULL)
+	while (environ[i] != NULL)
 	{
-		if (strncmp(environ[i], name, strlen(name)) == 0)
+		if (_str_n_cmp(environ[i], name, _strlen(name)) == 0)
 			return (&environ[i][len]);
 		i++;
 	}
@@ -54,7 +51,7 @@ char *_getenv(char *name)
 }
 
 /**
-* printenv - function that prints environmental variables
+* _printenv - function that prints environmental variables
 * Return:  0
 */
 
@@ -62,10 +59,10 @@ int _printenv(void)
 {
 	char *str = environ[0];
 	int i = 1;
-	
+
 	while (str[i] != '\0')
 	{
-		write(1, str, strlen(str));
+		write(1, str, _strlen(str));
 		write(1, "\n", 1);
 		str = environ[i];
 		++i;

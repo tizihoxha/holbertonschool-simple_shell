@@ -11,6 +11,8 @@
 #include <dirent.h>
 #include <fcntl.h>
 
+char *name;/* global variable */
+
 extern char **environ;
 int _strlen(char *s);
 int _strcmp(char *strg1, char *strg2);
