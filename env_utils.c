@@ -57,15 +57,13 @@ char *_getenv(char *name)
 
 int _printenv(void)
 {
-	char *str = environ[0];
-	int i = 1;
+	int i = 0;
 
-	while (str[i] != '\0')
+	while (environ[i])
 	{
-		write(1, str, _strlen(str));
-		write(1, "\n", 1);
-		str = environ[i];
-		++i;
+		write(STDOUT_FILENO, environ[i], _strlen(environ[i]));
+		write(STDOUT_FILENO, "\n", 1);
+		i++;
 	}
 	return (0);
 }

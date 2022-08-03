@@ -41,8 +41,8 @@ char *command_path(char *cmd)
 			new_path[0] = 0;
 	}
 	free(path);
+	free(new_path);
 	if (stat(cmd, &buffer) == 0)
 		return (_strdup(cmd));
-	free(new_path);
 	return (NULL);
 }
