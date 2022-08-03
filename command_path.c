@@ -18,7 +18,6 @@ char *command_path(char *cmd)
 	if (_getenv("PATH")[0] == ':')
 		if (stat(cmd, &buffer) == 0)
 			return (_strdup(cmd));
-
 	while (tokenize != NULL)
 	{
 		path_array[length] = tokenize;
@@ -30,17 +29,16 @@ char *command_path(char *cmd)
 	for (length = 0; path_array[length]; length++)
 	{
 		_strcpy(new_path, path_array[length]);
-                _strcat(new_path, "/");
-                _strcat(new_path, cmd);
-                _strcat(new_path, "\0");
-                if (stat(new_path, &buffer) == 0)
-                {
-                        free(path);
-                        return (new_path);
-                }
-                else
-                        new_path[0] = 0;
-
+		_strcat(new_path, "/");
+		_strcat(new_path, cmd);
+		_strcat(new_path, "\0");
+		if (stat(new_path, &buffer) == 0)
+		{
+			free(path);
+			return (new_path);
+		}
+		else
+			new_path[0] = 0;
 	}
 	free(path);
 	free(new_path);
