@@ -1,10 +1,13 @@
 #include "shell.h"
 
 /**
- * 
- *
- *
+ * main - function that checks if an open file descriptor is
+ * associated with terminal device
+ * @argc: argument count
+ * @argv: pointer to arguments
+ * Return: 0
  */
+
 char *name;
 /**
  * @name: global variable
@@ -19,7 +22,7 @@ int main(int __attribute__ ((unused))argc, char *argv[])
 	name = argv[0];
 	while(1)
 	{
-		if (isatty(0) == 1) /* 0 = STDIN_FILENO */
+		if (isatty(0) == 1)
 			write(1, "$ ", 2);
 		chars = getline(&line, &buffer, stdin);
 		if (chars == -1)
@@ -40,9 +43,9 @@ int main(int __attribute__ ((unused))argc, char *argv[])
 	return (0);
 }
 /**
- *
- *
- *
+ * execute - function that executes commands
+ * @cmd_arr: pointer to array of commands
+ * Return: 0, -1, 3
  */
 
 int execute(char *cmd_arr[])
@@ -77,7 +80,7 @@ int execute(char *cmd_arr[])
 	    {
 		(execve(execute_path, cmd_arr, environ));
 		perror("Error:");
-		exit(2);
+		exit(1);
 	    }
 	  else
 	    {
