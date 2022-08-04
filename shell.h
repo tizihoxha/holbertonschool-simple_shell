@@ -14,7 +14,7 @@
 #define TOK_BUFSIZE 64
 #define BUFSIZE 1024
 
-char *name;/* global variable */
+char *name;
 
 extern char **environ;
 int _strlen(char *s);
