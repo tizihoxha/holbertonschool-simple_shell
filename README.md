@@ -31,7 +31,11 @@ This repository contains the following files:
 
    **File**   |   **Description**   
 -------------- | --------------------- 
-
+[shell.h](https://github.com/tizihoxha/holbertonschool-simple_shell/blob/main/shell.h) | 
+[shell.c](https://github.com/tizihoxha/holbertonschool-simple_shell/blob/main/shell.c) | 
+[command_path.c](https://github.com/tizihoxha/holbertonschool-simple_shell/blob/main/command_path.c) |
+[env_utils.c](https://github.com/tizihoxha/holbertonschool-simple_shell/blob/main/env_utils.c) |
+[string_functions.c](https://github.com/tizihoxha/holbertonschool-simple_shell/blob/main/string_functions.c) |
 
 #### Usage
 
