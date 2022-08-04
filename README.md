@@ -4,9 +4,6 @@
 
 ![simple shell](https://user-images.githubusercontent.com/105599575/182689314-9e0f417d-d314-4005-9497-9eef7746bf0a.png)
 
-##### Learning Objectives
-
-At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 
 
 ### Description :bookmark:
