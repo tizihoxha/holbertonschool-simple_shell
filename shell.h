@@ -25,7 +25,7 @@ char *_strdup(char *str);
 int _str_n_cmp(const char *s1, const char *s2, size_t n);
 int _printenv(void);
 char *command_path(char *cmd);
-char *_getenv(char *name, **environ);
+char *_getenv(char *name);
 int _putchar(char c);
 int command_read(char *str, size_t __attribute__((unused))characters);
 int main(int __attribute__ ((unused))argc, char *argv[]);

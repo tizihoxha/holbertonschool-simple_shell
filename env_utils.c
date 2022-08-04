@@ -36,25 +36,8 @@ int _str_n_cmp(const char *s1, const char *s2, size_t n)
 * Return: No return
 */
 
-char *_getenv(char *name, **environ)
+char *_getenv(char *name, char **environ)
 {
-	int i = 0, j = 0;
-
-	if (!(name) || !(environ))
-		return (NULL);
-
-	while (environ[j] != NULL)
-	{
-		i = 0;
-		while (name[i] != '\0' && name[i] == environ[j][i])
-			i++;
-		if (name[i] == '\0')
-			return (environ[j]);
-		j++;
-	}
-	return (NULL);
-}
-/*{
 	int i = 0;
 	int len = strlen(name);
 
@@ -66,7 +49,7 @@ char *_getenv(char *name, **environ)
 	}
 
 	return (NULL);
-}*/
+}
 
 /**
 * _printenv - function that prints environmental variables
