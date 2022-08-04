@@ -41,11 +41,17 @@ char *_getenv(char *name)
 	int i = 0;
 	int len = strlen(name);
 
-	while (environ[i] != NULL)
+	/*while (environ[i] != NULL)
 	{
 		if (_str_n_cmp(environ[i], name, _strlen(name)) == 0)
 			return (&environ[i][len]);
 		i++;
+	}*/
+
+	for (i = 0; environ[i] != NULL; i++)
+	{
+		if (_str_n_cmp(environ[i], name, len) == 0)
+			return (&environ[i][len]);
 	}
 	return (NULL);
 }
