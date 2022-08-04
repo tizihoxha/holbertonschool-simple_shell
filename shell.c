@@ -54,10 +54,10 @@ int execute(char *cmd_arr[])
 	execute_path = command_path(cmd);
 	if (execute_path == NULL)
 	{
-		write(2, name, _strlen(name));
-		write(2, ": 1: ", 5);
-		write(2, cmd, _strlen(cmd));
-		write(2, ": not found\n", 12);
+		write(STDERR_FILENO, name, _strlen(name));
+		write(STDERR_FILENO, ": 1: ", 5);
+		write(STDERR_FILENO, cmd, _strlen(cmd));
+		write(STDERR_FILENO, ": not found\n", 12);
 		exit (127);
 	}
 	pid = fork();
