@@ -31,11 +31,11 @@ This repository contains the following files:
 
    **File**   |   **Description**   
 -------------- | --------------------- 
-[shell.h](https://github.com/tizihoxha/holbertonschool-simple_shell/blob/main/shell.h) | 
-[shell.c](https://github.com/tizihoxha/holbertonschool-simple_shell/blob/main/shell.c) | 
-[command_path.c](https://github.com/tizihoxha/holbertonschool-simple_shell/blob/main/command_path.c) |
-[env_utils.c](https://github.com/tizihoxha/holbertonschool-simple_shell/blob/main/env_utils.c) |
-[string_functions.c](https://github.com/tizihoxha/holbertonschool-simple_shell/blob/main/string_functions.c) |
+[shell.h](https://github.com/tizihoxha/holbertonschool-simple_shell/blob/main/shell.h) | File that contains all function prototypes
+[shell.c](https://github.com/tizihoxha/holbertonschool-simple_shell/blob/main/shell.c) | Contains functions for the implementation of Simple Shell, entry point, function that reads the command & functon that executes the commands
+[command_path.c](https://github.com/tizihoxha/holbertonschool-simple_shell/blob/main/command_path.c) | Functions that find the full PATH of the commands
+[env_utils.c](https://github.com/tizihoxha/holbertonschool-simple_shell/blob/main/env_utils.c) | Contains functions _printenv & _getenv, functions that find and print the environment
+[string_functions.c](https://github.com/tizihoxha/holbertonschool-simple_shell/blob/main/string_functions.c) | Contains created string functions like _strdup, _strlen, _strcat, _strcmp, _strcpy
 
 #### Usage
 
