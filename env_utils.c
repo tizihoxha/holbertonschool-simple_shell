@@ -37,28 +37,6 @@ int _str_n_cmp(const char *s1, const char *s2, size_t n)
 */
 
 char *_getenv(char *name)
-	{
-	char **environ_curs, *env_ptr, *name_ptr;
-
-	environ_curs = environ;
-	while (*environ_curs)
-	{
-		env_ptr = *environ_curs;
-		name_ptr = name;
-		while (*env_ptr == *name_ptr)
-		{
-			if (*env_ptr == '=')
-				break;
-			env_ptr++;
-			name_ptr++;
-		}
-		if ((*env_ptr == '=') && (*name_ptr == '\0'))
-			return (env_ptr + 1);
-		environ_curs++;
-	}
-	return (NULL);
-}
-	/**
 {
 	int i = 0;
 	int len = strlen(name);
@@ -71,7 +49,7 @@ char *_getenv(char *name)
 	}
 
 	return (NULL);
-}*/
+}
 
 /**
 * _printenv - function that prints environmental variables

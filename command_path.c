@@ -44,5 +44,6 @@ char *command_path(char *cmd)
 	free(new_path);
 	if (stat(cmd, &buffer) == 0)
 		return (_strdup(cmd));
+	printf("%s\n", (_strdup(cmd)));
 	return (NULL);
 }
