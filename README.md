@@ -59,7 +59,7 @@ $ ./hsh
 hsh main.c shell.c
 ($)
 ($) exit
-$
+
 ```
 
 Non-interactive Mode
@@ -71,7 +71,7 @@ $
 $ cat test_ls
 /bin/ls -l
 /bin/ls -l
-$
+
 $ cat test_ls | ./hsh
 hsh main.c shell.c test_ls
 hsh main.c shell.c test_ls
