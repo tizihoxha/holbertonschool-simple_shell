@@ -10,6 +10,9 @@
 #include <sys/stat.h>
 #include <dirent.h>
 #include <fcntl.h>
+#define TOK_DELIM " \t\r\n\a"
+#define TOK_BUFSIZE 64
+#define BUFSIZE 1024
 
 char *name;/* global variable */
 
