@@ -81,7 +81,7 @@ int execute(char *cmd_arr[])
 			execve(execute_path, cmd_arr, NULL);
 		}*/
 
-		execve(exe_path, cmd_array, environ);
+		execve(execute_path, cmd_arr, environ);
 		perror("Error");
 		exit(1);
 	}
